@@ -1,0 +1,457 @@
+/* ================================
+   DESIGN TOKENS – GALLTECH
+================================ */
+
+:root {
+  --bg-main: #F7FAFC;
+  --bg-secondary: #FFFFFF;
+  --primary: #0FB9C6;
+  --primary-dark: #0A8F98;
+  --accent: #0B2233;
+  --text-main: #0B2233;
+  --text-muted: #5F7C8A;
+  --border: #E4EDF2;
+}
+
+/* ================================
+   RESET & BASE
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+/* ================================
+   ANIMAÇÕES – SCROLL REVEAL
+================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+
+/* ================================
+   LAYOUT
+================================ */
+
+.container {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.section.muted {
+  background: var(--bg-secondary);
+}
+
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.section-text {
+  color: var(--text-muted);
+  max-width: 680px;
+}
+
+/* ================================
+   HEADER / NAV
+================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255,255,255,.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.nav {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 240px;
+}
+
+nav a {
+  position: relative;
+  margin-left: 28px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 6px 0;
+  transition: color .25s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width .3s ease;
+}
+
+nav a:hover {
+  color: var(--text-main);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   MENU MOBILE (SANDWICH)
+================================ */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 2px;
+  width: 24px;
+  background: var(--text-main);
+  transition: all .3s ease;
+}
+
+/* Estado ativo (vira X) */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+  padding: 140px 0 120px;
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(600px at 20% 30%, rgba(15,185,198,.25), transparent 60%),
+    radial-gradient(500px at 80% 20%, rgba(15,185,198,.18), transparent 55%);
+  animation: heroGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+  from { background-position: 0% 0%, 100% 0%; }
+  to { background-position: 10% 10%, 90% 15%; }
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.15;
+  margin: 16px 0 24px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+.hero-actions {
+  margin-top: 36px;
+  display: flex;
+  gap: 24px;
+}
+
+/* ================================
+   BOTÕES
+================================ */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 34px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  box-shadow: 0 10px 30px rgba(15,185,198,.25);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(15,185,198,.35);
+}
+
+.btn-outline {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  transition: all .2s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  background: rgba(15,185,198,.08);
+}
+
+.btn-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-link::after {
+  content: " →";
+}
+
+/* ================================
+   SOLUÇÕES
+================================ */
+
+.solutions-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 48px;
+}
+
+.solution h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.solution p {
+  color: var(--text-muted);
+}
+
+/* ================================
+   MÉTODO
+================================ */
+
+.timeline {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.timeline span {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 14px;
+}
+
+/* ================================
+   CONTATO
+================================ */
+
+.contact-section {
+  background: linear-gradient(180deg, var(--bg-main), #fff);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.contact-info {
+  margin-top: 32px;
+  display: flex;
+  gap: 32px;
+}
+
+.contact-form {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 40px;
+  border-radius: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.field label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.field input,
+.field textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15,185,198,.15);
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 48px 0;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 768px) {
+
+  /* ==========================
+     AJUSTES GERAIS
+  =========================== */
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* ==========================
+     MENU MOBILE
+  =========================== */
+
+  /* Esconde menu desktop visualmente */
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    z-index: 2000;
+  }
+
+  /* Quando menu aberto */
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  /* Links do menu */
+  .nav-links a {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  /* Remove visual de botão no mobile */
+  .nav-links .btn-outline {
+    border: none;
+    padding: 0;
+    background: none;
+  }
+
+  /* Botão sandwich */
+  .menu-toggle {
+    display: flex;
+    z-index: 3000;
+  }
+
+}
