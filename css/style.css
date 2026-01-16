@@ -1,22 +1,19 @@
-/* ================================
-   DESIGN TOKENS – GALLTECH
-================================ */
-
+/* ==================================================
+   TOKENS
+================================================== */
 :root {
   --bg-main: #F7FAFC;
   --bg-secondary: #FFFFFF;
   --primary: #0FB9C6;
   --primary-dark: #0A8F98;
-  --accent: #0B2233;
   --text-main: #0B2233;
   --text-muted: #5F7C8A;
   --border: #E4EDF2;
 }
 
-/* ================================
-   RESET & BASE
-================================ */
-
+/* ==================================================
+   RESET
+================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -38,64 +35,51 @@ img {
 button {
   border: none;
   background: none;
+  cursor: pointer;
 }
 
-/* ================================
-   ANIMAÇÕES – SCROLL REVEAL
-================================ */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-delay-1 { transition-delay: .1s; }
-.reveal-delay-2 { transition-delay: .2s; }
-.reveal-delay-3 { transition-delay: .3s; }
-
-/* ================================
+/* ==================================================
    LAYOUT
-================================ */
-
+================================================== */
 .container {
   max-width: 1120px;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 24px;
 }
 
 .section {
-  padding: 96px 0;
+  padding: 120px 0;
 }
 
 .section.muted {
   background: var(--bg-secondary);
 }
 
+/* Centralização PADRÃO DAS SECTIONS */
+.section > .container {
+  text-align: center;
+}
+
 .section h2 {
   font-size: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .section-text {
+  max-width: 720px;
+  margin: 0 auto;
   color: var(--text-muted);
-  max-width: 680px;
+  font-size: 17px;
 }
 
-/* ================================
-   HEADER / NAV
-================================ */
-
+/* ==================================================
+   HEADER
+================================================== */
 .header {
   position: sticky;
   top: 0;
-  z-index: 999;
-  background: rgba(255,255,255,.85);
+  z-index: 3000;
+  background: rgba(255,255,255,.9);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
 }
@@ -103,25 +87,26 @@ button {
 .nav {
   height: 76px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  width: 240px;
+  width: 200px;
 }
-
-nav a {
-  position: relative;
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links a {
   margin-left: 28px;
   text-decoration: none;
   color: var(--text-muted);
   font-size: 14px;
-  padding: 6px 0;
-  transition: color .25s ease;
+  position: relative;
 }
 
-nav a::after {
+.nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -129,19 +114,15 @@ nav a::after {
   width: 0;
   height: 2px;
   background: var(--primary);
-  transition: width .3s ease;
+  transition: .3s;
 }
 
-nav a:hover {
-  color: var(--text-main);
-}
-
-nav a:hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 
 /* ================================
-   MENU MOBILE (SANDWICH)
+   MENU MOBILE — DEFINITIVO
 ================================ */
 
 .menu-toggle {
@@ -151,14 +132,14 @@ nav a:hover::after {
   gap: 6px;
   width: 40px;
   height: 40px;
-  cursor: pointer;
+  z-index: 3001;
 }
 
 .menu-toggle span {
-  height: 2px;
   width: 24px;
+  height: 2px;
   background: var(--text-main);
-  transition: all .3s ease;
+  transition: transform .3s ease, opacity .3s ease;
 }
 
 /* Estado ativo (vira X) */
@@ -174,129 +155,114 @@ nav a:hover::after {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ================================
-   HERO
-================================ */
+/* Menu mobile */
+.nav-links {
+  display: flex;
+}
 
+/* ==================================================
+   HERO — TELA INTEIRA
+================================================== */
 .hero {
-  padding: 140px 0 120px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero-gradient {
   background:
     radial-gradient(600px at 20% 30%, rgba(15,185,198,.25), transparent 60%),
     radial-gradient(500px at 80% 20%, rgba(15,185,198,.18), transparent 55%);
-  animation: heroGlow 12s ease-in-out infinite alternate;
 }
 
-@keyframes heroGlow {
-  from { background-position: 0% 0%, 100% 0%; }
-  to { background-position: 10% 10%, 90% 15%; }
+.hero-grid {
+  max-width: 760px;
 }
 
 .eyebrow {
   font-size: 13px;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--primary-dark);
   font-weight: 600;
 }
 
-.hero-content {
-  max-width: 720px;
-}
-
 .hero h1 {
   font-size: 48px;
   line-height: 1.15;
-  margin: 16px 0 24px;
+  margin: 20px 0;
 }
 
 .hero p {
   font-size: 18px;
   color: var(--text-muted);
-  max-width: 560px;
 }
 
 .hero-actions {
-  margin-top: 36px;
+  margin-top: 40px;
   display: flex;
+  justify-content: center;
   gap: 24px;
 }
 
-/* ================================
-   BOTÕES
-================================ */
-
+/* ==================================================
+   BUTTONS
+================================================== */
 .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 34px;
+  padding: 16px 38px;
   border-radius: 10px;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  box-shadow: 0 10px 30px rgba(15,185,198,.25);
-  transition: transform .2s ease, box-shadow .2s ease;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(15,185,198,.35);
+  transition: transform .2s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(15,185,198,.35);
-}
-
-.btn-outline {
-  padding: 8px 18px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  color: var(--text-main);
-  transition: all .2s ease;
-}
-
-.btn-outline:hover {
-  border-color: var(--primary);
-  background: rgba(15,185,198,.08);
 }
 
 .btn-link {
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--text-main);
   font-weight: 500;
+  text-decoration: none;
 }
 
 .btn-link::after {
   content: " →";
 }
 
-/* ================================
-   SOLUÇÕES
-================================ */
+/* ==================================================
+   SPLIT SECTION
+================================================== */
+.split {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* ==================================================
+   SOLUÇÕES
+================================================== */
 .solutions-grid {
-  margin-top: 56px;
+  margin-top: 64px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap: 48px;
 }
 
-.solution h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
+.solution {
+  text-align: left;
 }
 
-.solution p {
-  color: var(--text-muted);
-}
-
-/* ================================
+/* ==================================================
    MÉTODO
-================================ */
-
+================================================== */
 .timeline {
-  margin-top: 40px;
+  margin-top: 48px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -306,27 +272,92 @@ nav a:hover::after {
   border-radius: 999px;
   border: 1px solid var(--border);
   background: #fff;
-  font-size: 14px;
 }
 
-/* ================================
+/* ==================================================
+   CTA FINAL — SECTION DE VERDADE
+================================================== */
+.final-cta {
+  padding: 140px 0;
+  background: linear-gradient(180deg, var(--bg-main), var(--bg-secondary));
+}
+
+.final-content {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.final-content h2 {
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+
+.final-content p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+}
+
+.final-actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* ==================================================
+   CLIENTES
+================================================== */
+.clients-section {
+  overflow: hidden;
+}
+
+.clients-marquee {
+  margin-top: 56px;
+  overflow: hidden;
+}
+
+.clients-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.client-card {
+  min-width: 180px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.client-card img {
+  max-width: 120px;
+  filter: grayscale(100%);
+  opacity: .7;
+  transition: .3s;
+}
+
+.client-card:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* ==================================================
    CONTATO
-================================ */
-
-.contact-section {
-  background: linear-gradient(180deg, var(--bg-main), #fff);
-}
-
+================================================== */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-}
-
-.contact-info {
-  margin-top: 32px;
-  display: flex;
-  gap: 32px;
+  text-align: left;
 }
 
 .contact-form {
@@ -337,8 +368,6 @@ nav a:hover::after {
 }
 
 .field {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 20px;
 }
 
@@ -346,27 +375,26 @@ nav a:hover::after {
   font-size: 13px;
   color: var(--text-muted);
   margin-bottom: 6px;
+  display: block;
+  text-align: left;
 }
 
 .field input,
 .field textarea {
+  width: 100%;
   padding: 12px 14px;
   border-radius: 8px;
   border: 1px solid var(--border);
-  font-size: 14px;
 }
 
-.field input:focus,
-.field textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(15,185,198,.15);
+.contact-form .btn-primary {
+  width: 100%;
+  margin-top: 16px;
 }
 
-/* ================================
+/* ==================================================
    FOOTER
-================================ */
-
+================================================== */
 .footer {
   border-top: 1px solid var(--border);
   padding: 48px 0;
@@ -375,19 +403,13 @@ nav a:hover::after {
 .footer-grid {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  color: var(--text-muted);
+  align-items: center;
 }
 
-/* ================================
+/* ==================================================
    RESPONSIVO
-================================ */
-
+================================================== */
 @media (max-width: 768px) {
-
-  /* ==========================
-     AJUSTES GERAIS
-  =========================== */
 
   .hero h1 {
     font-size: 34px;
@@ -395,63 +417,56 @@ nav a:hover::after {
 
   .hero-actions {
     flex-direction: column;
-    gap: 16px;
+  }
+
+  .hero-actions a {
+    width: 100%;
+    text-align: center;
   }
 
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
   }
 
-  .contact-info {
-    flex-direction: column;
-    gap: 16px;
+  .menu-toggle {
+    display: flex;
+    z-index: 3001;
   }
 
-  /* ==========================
-     MENU MOBILE
-  =========================== */
-
-  /* Esconde menu desktop visualmente */
   .nav-links {
     position: fixed;
-    inset: 0;
+    top: 76px; /* altura do header */
+    left: 0;
+
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 76px);
+
     background: var(--bg-secondary);
-    display: flex;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 28px;
+
+    gap: 32px;
 
     transform: translateY(-100%);
     transition: transform 0.4s ease;
+
     z-index: 2000;
   }
 
-  /* Quando menu aberto */
   .nav-links.active {
     transform: translateY(0);
   }
 
-  /* Links do menu */
   .nav-links a {
     font-size: 22px;
     font-weight: 500;
   }
 
-  /* Remove visual de botão no mobile */
   .nav-links .btn-outline {
     border: none;
     padding: 0;
     background: none;
   }
-
-  /* Botão sandwich */
-  .menu-toggle {
-    display: flex;
-    z-index: 3000;
-  }
-
 }
