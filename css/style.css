@@ -222,6 +222,9 @@ button {
 .btn-primary:hover {
   transform: translateY(-2px);
 }
+.main{
+  border-radius: 25px !important;
+}
 
 .btn-link {
   color: var(--text-main);
@@ -311,43 +314,76 @@ button {
   overflow: hidden;
 }
 
-.clients-marquee {
-  margin-top: 56px;
+.clients-section {
   overflow: hidden;
+}
+
+.clients-marquee {
+  width: 80%;
+  margin: 56px auto ;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
 }
 
 .clients-track {
   display: flex;
   width: max-content;
-  animation: marquee 30s linear infinite;
+  animation: marquee 22s linear infinite;
 }
 
+.clients-group {
+  display: flex;
+  gap: 40px;
+}
+
+/* Loop contínuo real */
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .client-card {
-  min-width: 180px;
-  text-align: center;
-  text-decoration: none;
-  color: var(--text-main);
+  min-width: 140px;
+  max-width: 140px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+
+  text-align: center;
+  cursor: default; /* não parece clicável */
 }
 
 .client-card img {
-  max-width: 120px;
+  max-width: 110px;
+  max-height: 56px;
+  object-fit: contain;
+
   filter: grayscale(100%);
-  opacity: .7;
-  transition: .3s;
+  opacity: 0.75;
+  transition: filter .3s ease, opacity .3s ease;
 }
 
 .client-card:hover img {
   filter: grayscale(0);
   opacity: 1;
+}
+
+.client-card span {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* pausa elegante */
+.clients-marquee:hover .clients-track {
+  animation-play-state: paused;
 }
 
 /* ==================================================
@@ -406,6 +442,42 @@ button {
   align-items: center;
 }
 
+/* ================================
+   WHATSAPP FLOAT — PREMIUM
+================================ */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+
+  width: 56px;
+  height: 56px;
+
+  background: #25D366;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
+  z-index: 4000;
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.whatsapp-float img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(37, 211, 102, 0.45);
+}
+
 /* ==================================================
    RESPONSIVO
 ================================================== */
@@ -435,28 +507,32 @@ button {
 
   .nav-links {
     position: fixed;
-    top: 76px; /* altura do header */
+    top: 80px; /* altura real do header */
     left: 0;
 
     width: 100vw;
-    height: calc(100vh - 76px);
+    height: calc(100vh - 80px);
 
     background: var(--bg-secondary);
 
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     gap: 32px;
 
     transform: translateY(-100%);
-    transition: transform 0.4s ease;
+    opacity: 0;
+    pointer-events: none;
 
+    transition: transform .4s ease, opacity .3s ease;
     z-index: 2000;
   }
 
   .nav-links.active {
     transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-links a {
@@ -468,5 +544,32 @@ button {
     border: none;
     padding: 0;
     background: none;
+  }
+  .clients-marquee {
+    width: 100%;
+  }
+
+  .clients-group {
+    gap: 28px;
+  }
+
+  .client-card {
+    min-width: 120px;
+    max-width: 120px;
+  }
+
+  .client-card img {
+    max-width: 96px;
+  }
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-float img {
+    width: 24px;
+    height: 24px;
   }
 }
