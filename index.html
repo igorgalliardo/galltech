@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>GallTech • Soluções em Tecnologia</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="./img/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GallTech | Soluções em Tecnologia</title>
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="./img/favicon.png" />
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
-  <div class="container nav">
-    <img src="./img/logo-new.png" alt="GallTech" class="logo">
+  <div class="container header-content">
+    <div class="logo">
+      <img src="./img/logo-test-new.png" alt="GallTech">
+    </div>
 
-    <!-- MENU -->
-    <nav class="nav-links">
-      <a href="#solucoes">Soluções</a>
-      <a href="#metodo">Método</a>
-      <a href="#clientes">Nossos Clientes</a>
-      <a href="#contato" class="btn-outline">Contato</a>
+    <nav class="nav">
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#blog">Blog</a>
+      <a href="#contato" class="btn-outline">Fale Conosco</a>
     </nav>
 
-    <!-- BOTÃO MOBILE -->
     <button class="menu-toggle" aria-label="Abrir menu">
       <span></span>
       <span></span>
@@ -31,247 +36,279 @@
   </div>
 </header>
 
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container hero-content">
 
-<section class="hero hero-gradient">
-  <div class="container hero-grid reveal">
-    <div>
-      <span class="eyebrow">GallTech • Soluções Digitais</span>
+    <div class="hero-text">
       <h1>
-        Estruturamos negócios para crescer no mundo digital.
+        Sites e sistemas <span>sob medida</span><br>
+        para digitalizar seu negócio
       </h1>
+
       <p>
-        Atuamos com pequenos e médios negócios que precisam
-        organizar, digitalizar e evoluir sua operação com tecnologia.
+        Desenvolvemos soluções digitais personalizadas para impulsionar sua empresa
+        no mundo online.
       </p>
 
-      <div class="hero-actions">
-        <a href="#contato" class="btn-primary main">Conversar com a GallTech</a>
-        <a href="#solucoes" class="btn-link">Ver soluções</a>
+      <div class="hero-buttons">
+        <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
+        <a href="#portfolio" class="btn-secondary">Ver Portfólio</a>
       </div>
     </div>
+
+    <div class="hero-image">
+      <img src="./img/test-right.webp" alt="Soluções digitais GallTech">
+    </div>
+
   </div>
 </section>
 
-
-<section class="section muted">
-  <div class="container split reveal">
-    <h2>Foco em pequenos e médios negócios</h2>
-    <p class="section-text">
-      Trabalhamos com empresas em fase de crescimento que precisam
-      sair do improviso, ganhar controle operacional e usar o digital
-      como parte estratégica do negócio.
-    </p>
-  </div>
-</section>
-
-
-
-<section id="solucoes" class="section">
+<!-- SERVIÇOS -->
+<section class="services light-bg" id="servicos">
   <div class="container">
-    <h2 class="reveal">O que estruturamos</h2>
+    <h2>Nossos Serviços</h2>
 
-    <div class="solutions-grid">
-      <div class="solution reveal">
-        <h3>Presença Digital</h3>
-        <p>Websites institucionais sólidos, claros e alinhados ao posicionamento da empresa.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">
+          <img src="./img/www.png" alt="Sites Institucionais">
+        </div>
+        <h3>Sites Institucionais</h3>
+        <p>Um site visualmente agradável, rápido e otimizado para o Google.</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">
+          <img src="./img/website.png" alt="Landing Pages">
+        </div>
+        <h3>Landing Pages</h3>
+        <p>Landing pages atraentes e eficazes que convertam visitantes em leads.</p>
       </div>
 
-      <div class="solution reveal reveal-delay-1">
-        <h3>Sistemas & Processos</h3>
-        <p>Plataformas sob medida para gestão, automação e eficiência operacional.</p>
+      <div class="card">
+        <div class="card-icon">
+          <img src="./img/seo.png" alt="SEO">
+        </div>
+        <h3>Otimização SEO</h3>
+        <p>Deixe seu site entre os primeiros resultados do Google.</p>
       </div>
 
-      <div class="solution reveal reveal-delay-1">
-        <h3>Automação e Integrações</h3>
-        <p>Eliminamos tarefas manuais e conectamos sistemas para ganhar escala e controle.</p>
+      <div class="card">
+        <div class="card-icon">
+          <img src="./img/online-store.png" alt="Lojas Virtuais">
+        </div>
+        <h3>Lojas Virtuais</h3>
+        <p>Somos Especialistas em E-commerce nuvemshop.</p>
       </div>
 
-      <div class="solution reveal reveal-delay-2">
-        <h3>Dados & Decisão</h3>
-        <p>Análise de dados para apoiar decisões e orientar o crescimento do negócio.</p>
-      </div>
-
-      <div class="solution reveal reveal-delay-3">
-        <h3>Consultoria Tecnológica</h3>
-        <p>Orientação técnica para evitar desperdício e investir em tecnologia com clareza.</p>
-      </div>
-
-      <div class="solution reveal reveal-delay-3">
-        <h3>Parceria Tecnológica</h3>
-        <p>Acompanhamento, suporte e evolução constante do digital da empresa.</p>
-      </div>
     </div>
   </div>
 </section>
 
-<section id="metodo" class="section muted">
+<!-- CLIENTES -->
+<section class="clients normal-bg">
   <div class="container">
-    <h2 class="reveal">Como trabalhamos</h2>
-
-    <div class="timeline reveal">
-      <span>Diagnóstico</span>
-      <span>Planejamento</span>
-      <span>Estruturação</span>
-      <span>Desenvolvimento</span>
-      <span>Evolução contínua</span>
-    </div>
-  </div>
-</section>
-
-
-<section class="final-cta">
-  <div class="container final-content reveal">
-    <h2>Tecnologia feita com responsabilidade</h2>
-
-    <p>
-      Atuamos como parceiros técnicos, criando soluções digitais
-      que acompanham o crescimento do negócio.
-    </p>
-
-    <div class="final-actions">
-      <a href="#contato" class="btn-primary">Iniciar projeto</a>
-    </div>
-  </div>
-</section>
-
-
-<section id="clientes" class="section clients-section">
-  <div class="container">
-    <h2 class="reveal">Empresas que confiam na GallTech</h2>
-    <p class="section-text reveal reveal-delay-1">
-      Trabalhamos lado a lado com empresas que decidiram estruturar
-      e evoluir seu digital.
-    </p>
+    <h2>Empresas que confiam na GallTech</h2>
   </div>
 
   <div class="clients-marquee">
-  <div class="clients-track">
+    <div class="clients-track">
 
-    <!-- GRUPO 1 -->
-    <div class="clients-group">
-
-      <div class="client-card">
-        <img src="./img/customers/moreia.png" alt="Barbearia Moreira">
-        <span>Barbearia Moreira</span>
+      <!-- LOGO -->
+      <div class="client-logo">
+        <img src="./img/customers/kodall.png" alt="Cliente 1" class="color">
       </div>
 
-      <div class="client-card">
-        <img src="./img/customers/jr-ar-condicionado.png" alt="JR Ar Condicionado">
-        <span>JR Ar Condicionado</span>
+      <div class="client-logo">
+        <img src="./img/customers/moreia.png" alt="Cliente 2" class="color">
       </div>
 
-      <div class="client-card">
-        <img src="./img/customers/kodall.png" alt="Kodall Modas">
-        <span>Kodall Modas</span>
+      <div class="client-logo">
+        <img src="./img/customers/jr-ar-condicionado.png" alt="Cliente 3" class="color">
       </div>
 
-      <div class="client-card">
-        <img src="./img/customers/topogeo.png" alt="Topogeo">
-        <span>Topogeo</span>
+      <div class="client-logo">
+        <img src="./img/customers/topogeo.png" class="color">
       </div>
 
-    </div>
-
-    <!-- GRUPO 2 (DUPLICADO) -->
-    <div class="clients-group">
-
-      <div class="client-card">
-        <img src="./img/customers/moreia.png" alt="Barbearia Moreira">
-        <span>Barbearia Moreira</span>
+      <!-- DUPLICAR LOGOS PARA LOOP PERFEITO -->
+      <div class="client-logo">
+        <img src="./img/customers/kodall.png" alt="Cliente 1" class="color">
       </div>
 
-      <div class="client-card">
-        <img src="./img/customers/jr-ar-condicionado.png" alt="JR Ar Condicionado">
-        <span>JR Ar Condicionado</span>
+      <div class="client-logo">
+        <img src="./img/customers/moreia.png" alt="Cliente 2" class="color">
       </div>
 
-      <div class="client-card">
-        <img src="./img/customers/kodall.png" alt="Kodall Modas">
-        <span>Kodall Modas</span>
-      </div>
-
-      <div class="client-card">
-        <img src="./img/customers/topogeo.png" alt="Topogeo">
-        <span>Topogeo</span>
+      <div class="client-logo">
+        <img src="./img/customers/jr-ar-condicionado.png" alt="Cliente 3" class="color">
       </div>
 
     </div>
-
   </div>
-</div>
+</section>
+
+
+<!-- PORTFÓLIO -->
+<section class="portfolio light-bg" id="portfolio">
+  <div class="container">
+    <h2>Nosso Portfólio</h2>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <h4>Portal de Notícias</h4>
+        <p>Website rápido e escalável.</p>
+      </div>
+      <div class="portfolio-item">
+        <h4>Sistema de CRM</h4>
+        <p>Gestão de clientes e processos.</p>
+      </div>
+      <div class="portfolio-item">
+        <h4>Loja Virtual</h4>
+        <p>E-commerce completo e seguro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS
+<section class="testimonials" id="depoimentos">
+  <div class="container">
+    <h2>O que nossos clientes dizem</h2>
+
+    <div class="testimonial">
+      <p>
+        “A GallTech desenvolveu nosso sistema com excelência.
+        Profissionalismo e qualidade acima da média.”
+      </p>
+      <strong>Lucas Almeida — Empresa XYZ</strong>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- BLOG -->
+<section class="blog normal-bg" id="blog">
+  <div class="container">
+    <h2>Blog & Conteúdo</h2>
+
+    <div class="blog-grid">
+
+      <article class="blog-card">
+        <div class="blog-image">
+          <img src="./blog/img/importancia-site-institucional.webp" alt="Sites institucionais modernos">
+        </div>
+        <div class="blog-content">
+          <span class="blog-date">20 Nov 2025</span>
+          <h3>Por que sua empresa precisa de um site institucional moderno</h3>
+          <a href="./blog/porque-ter-site-institucional.html" class="blog-link">Ler mais →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-image">
+          <img src="./blog/img/landing-page-que-converte.webp" alt="Landing pages que convertem">
+        </div>
+        <div class="blog-content">
+          <span class="blog-date">07 Dez 2025</span>
+          <h3>Landing Pages: como aumentar sua taxa de conversão</h3>
+          <a href="./blog/landing-pages-que-convertem.html" class="blog-link">Ler mais →</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-image">
+          <img src="./blog/img/seo-como-aparecer-no-google.webp" alt="SEO para empresas">
+        </div>
+        <div class="blog-content">
+          <span class="blog-date">17 Jan 2026</span>
+          <h3>SEO para empresas: como aparecer no Google em 2026</h3>
+          <a href="./blog/seo-como-aparecer-no-google-2026.html" class="blog-link">Ler mais →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta light-bg" id="contato">
+  <div class="container">
+    <h2>Quanto mais rápido seu site, mais clientes em contato com você!</h2>
+    <p>Segundo o Google, 53% dos usuários de dispositivos móveis abandonam sites que levam mais de 3 segundos para carregar. Com isso, a GallTech cria seu site e landing page carregando super rápido.</p>
+    <a href="https://wa.me/5519994638282?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista." class="btn-primary cta-whats">Falar com Especialista</a>
+  </div>
 </section>
 
 <!-- CONTATO -->
-<section id="contato" class="section muted contact-section">
-    <div class="container contact-grid">
+<section class="contact normal-bg">
+  <div class="container contact-grid">
 
-        <div class="contact-text reveal">
-            <h2>Vamos estruturar o digital da sua empresa</h2>
-            <p class="section-text">
-                Conte um pouco sobre seu negócio e seus desafios.
-                Entraremos em contato para entender o cenário e propor a melhor solução.
-            </p>
+    <!-- TEXTO -->
+    <div class="contact-info">
+      <h2>Entre em contato com a GallTech</h2>
+      <p>
+        Conte pra gente sobre seu projeto. Vamos analisar sua necessidade
+        e indicar a melhor solução para o seu negócio.
+      </p>
 
-            <div class="contact-info">
-                <div>
-                    <strong>Email</strong>
-                    <span>contato@galltech.com.br</span>
-                </div>
-                <div>
-                    <strong>Atendimento</strong>
-                    <span>Seg a Sex • Horário comercial</span>
-                </div>
-            </div>
-        </div>
-
-        <form class="contact-form reveal reveal-delay-1">
-            <div class="field">
-                <label>Nome</label>
-                <input type="text" placeholder="Seu nome" required>
-            </div>
-
-            <div class="field">
-                <label>Email</label>
-                <input type="email" placeholder="seu@email.com" required>
-            </div>
-
-            <div class="field">
-                <label>Empresa</label>
-                <input type="text" placeholder="Nome da empresa">
-            </div>
-
-            <div class="field">
-                <label>Mensagem</label>
-                <textarea placeholder="Descreva brevemente o que você precisa"></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary">
-                Enviar mensagem
-            </button>
-        </form>
-
+      <ul class="contact-list">
+        <li><strong>Email:</strong> contato@galltech.com.br</li>
+        <li><strong>WhatsApp:</strong> (19) 99463-8282</li>
+        <li><strong>Atendimento:</strong> Seg a Sex • 09h às 18h</li>
+      </ul>
     </div>
+
+    <!-- FORMULÁRIO -->
+    <form class="contact-form" action="send.php" method="POST">
+      <input type="text" name="name" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <input type="tel" name="phone" placeholder="Seu WhatsApp">
+      <textarea name="message" placeholder="Conte brevemente sobre seu projeto" required></textarea>
+
+      <button type="submit" class="btn-primary">
+        Enviar mensagem
+      </button>
+    </form>
+
+  </div>
 </section>
 
-<footer id="contato" class="footer">
-    <div class="container footer-grid">
-        <div>
-            <strong>GallTech</strong><br>
-            Soluções em Tecnologia
-        </div>
-        <div>
-            contato@galltech.com.br<br>
-            © 2026
-        </div>
-    </div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 GallTech — Soluções em Tecnologia</p>
+    <p>Email: contato@galltech.com.br</p>
+  </div>
 </footer>
-<a
-  href="https://wa.me/5519994638282"
+<!-- WHATSAPP FLUTUANTE -->
+<a 
+  href="https://wa.me/5519994638282?text=Olá!%20Gostaria%20de%20um%20orçamento."
   class="whatsapp-float"
   target="_blank"
-  aria-label="Falar com a GallTech no WhatsApp"
+  aria-label="Falar no WhatsApp"
 >
-<img src="./img/WhatsApp.svg.png" alt="WhatsApp GallTech">  
-<script src="./js/main.js"></script>
+  <img src="./img/WhatsApp.svg.png" alt="WhatsApp">
+</a>
+
+<!-- MODAL SUCESSO -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal">
+    <button class="modal-close" id="closeModal">×</button>
+    <h3>Mensagem enviada com sucesso 🚀</h3>
+    <p>
+      Recebemos seu contato e em breve um especialista da GallTech
+      entrará em contato com você.
+    </p>
+  </div>
+</div>
+
+<!-- JS MENU -->
+<script src="./js/main.js">
+</script>
+
 </body>
 </html>
