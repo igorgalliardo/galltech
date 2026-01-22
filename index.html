@@ -150,27 +150,72 @@
 </section>
 
 
-<!-- PORTFÓLIO -->
-<section class="portfolio light-bg" id="portfolio">
+<!-- PORTFÓLIO SLIDER -->
+<section class="portfolio showcase" id="portfolio">
   <div class="container">
     <h2>Nosso Portfólio</h2>
 
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <h4>Portal de Notícias</h4>
-        <p>Website rápido e escalável.</p>
+    <div class="showcase-slider">
+
+      <!-- SLIDE -->
+      <div class="showcase-slide active">
+        <div class="showcase-text">
+          <div class="stars">★★★★★</div>
+          <h3>Barbearia Moreira</h3>
+          <span>Empresa de estética masculina</span>
+          <a href="https://barbeariamoreira.com.br" class="btn-primary">Ver projeto online</a>
+        </div>
+
+        <div class="showcase-media">
+          <img src="./img/portfolio/moreira-barber-portfolio.webp" alt="Projeto Moreira Barber">
+        </div>
       </div>
-      <div class="portfolio-item">
-        <h4>Sistema de CRM</h4>
-        <p>Gestão de clientes e processos.</p>
+
+      <!-- SLIDE -->
+      <div class="showcase-slide">
+        <div class="showcase-text">
+          <div class="stars">★★★★★</div>
+          <h3>JR Sooluções em Ar Condicionados</h3>
+          <span>Empresa de instalação e manutenção de ar condicionado</span>
+          <a href="https://jrarcondicionados.com.br" class="btn-primary">Ver projeto online</a>
+        </div>
+
+        <div class="showcase-media">
+          <img src="./img/portfolio/jr-ar-condicionados-portfolio.webp" alt="Projeto Moreira Barber">
+        </div>
       </div>
-      <div class="portfolio-item">
-        <h4>Loja Virtual</h4>
-        <p>E-commerce completo e seguro.</p>
+
+      <!-- SLIDE -->
+      <div class="showcase-slide">
+        <div class="showcase-text">
+          <div class="stars">★★★★★</div>
+          <h3>Topogeo</h3>
+          <span>Escritório de Engenharia</span>
+          <a href="https://topogeotopografia.com.br" class="btn-primary">Ver projeto online</a>
+        </div>
+
+        <div class="showcase-media">
+          <img src="./img/portfolio/topogeo-portfolio.webp" alt="Projeto Topogeo">
+        </div>
       </div>
+
+      <!-- CONTROLES -->
+      <button class="showcase-btn prev">‹</button>
+      <button class="showcase-btn next">›</button>
+
+      <!-- INDICADORES -->
+      <div class="showcase-dots">
+        <button class="dot active" data-slide="0"></button>
+        <button class="dot" data-slide="1"></button>
+        <button class="dot" data-slide="2"></button>
+      </div>
+
     </div>
   </div>
 </section>
+
+
+
 
 <!-- DEPOIMENTOS
 <section class="testimonials" id="depoimentos">
@@ -234,7 +279,7 @@
 
 
 <!-- CTA -->
-<section class="cta light-bg" id="contato">
+<section class="cta light-bg">
   <div class="container">
     <h2>Quanto mais rápido seu site, mais clientes em contato com você!</h2>
     <p>Segundo o Google, 53% dos usuários de dispositivos móveis abandonam sites que levam mais de 3 segundos para carregar. Com isso, a GallTech cria seu site e landing page carregando super rápido.</p>
@@ -243,7 +288,7 @@
 </section>
 
 <!-- CONTATO -->
-<section class="contact normal-bg">
+<section class="contact normal-bg" id="contato">
   <div class="container contact-grid">
 
     <!-- TEXTO -->
@@ -279,11 +324,81 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="container">
-    <p>© 2026 GallTech — Soluções em Tecnologia</p>
-    <p>Email: contato@galltech.com.br</p>
+  <div class="container footer-grid">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+      <img src="./img/logo-test-new.png" alt="GallTech">
+      <p>
+        Desenvolvemos sites, sistemas e soluções digitais sob medida
+        para impulsionar negócios no ambiente online.
+      </p>
+
+      <!-- BADGE SITE SEGURO -->
+      <div class="secure-badge">
+        <span>🔒 Site Seguro</span>
+        <small>Conexão protegida (HTTPS)</small>
+      </div>
+    </div>
+
+    <!-- MENU -->
+    <div class="footer-links">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTATO -->
+    <div class="footer-contact">
+      <h4>Contato</h4>
+      <ul>
+        <li>📧 contato@galltech.com.br</li>
+        <li>📱 (19) 99463-8282</li>
+        <li>🕘 Seg–Sex • 09h às 18h</li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-social">
+      <h4>Redes Sociais</h4>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/company/galltech" target="_blank" aria-label="LinkedIn">
+          <img src="./img/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/galltech" target="_blank" aria-label="Instagram">
+          <img src="./img/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://wa.me/5519994638282" target="_blank" aria-label="WhatsApp">
+          <img src="./img/whatsapp.png" alt="WhatsApp">
+        </a>
+        <a href="mailto:contato@galltech.com.br" aria-label="Email">
+          <img src="./img/o-email.png" alt="Email">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom-content">
+      <p>© 2026 GallTech — Soluções em Tecnologia. Todos os direitos reservados.</p>
+
+      <div class="footer-legal">
+        <a href="politica-de-privacidade.html">Política de Privacidade</a>
+        <span>|</span>
+        <a href="termos-de-uso.html">Termos de Uso</a>
+      </div>
+    </div>
   </div>
 </footer>
+
+
 <!-- WHATSAPP FLUTUANTE -->
 <a 
   href="https://wa.me/5519994638282?text=Olá!%20Gostaria%20de%20um%20orçamento."
